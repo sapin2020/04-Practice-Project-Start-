@@ -4,7 +4,7 @@ on:
     branches:
       master
 jobs:
-  Deploy:
+  Lint:
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
@@ -15,6 +15,7 @@ jobs:
         run: echo "Running Lint..."
       - run: npm run lint
   Test:
+    needs: Lint
     runs-on: ubuntu-latest
     steps: 
       - name: Get Code
@@ -25,6 +26,7 @@ jobs:
         run: echo "Running Test..."
       - run: npm run test 
   Build:
+    needs: Test
     runs-on: ubuntu-latest
     steps: 
       - name: Get Code
