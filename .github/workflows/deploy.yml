@@ -13,7 +13,7 @@ jobs:
         run: npm ci 
       - name: Run Lint 
         run: echo "Running Lint..."
-        run: npm run lint
+      - run: npm run lint
   Test:
     runs-on: ubuntu-latest
     steps: 
@@ -33,7 +33,7 @@ jobs:
         run: npm ci 
       - name: Run Build 
         run: echo "Running Build..."
-        run: npm run build 
+      - run: npm run build 
 
 
 
